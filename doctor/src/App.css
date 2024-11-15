@@ -1,0 +1,424 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.appointments-section {
+  width: 95%;
+  margin: 10px 0px 160px 60px;
+  max-width: 1200px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner h5 {
+  font-size: 29px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  table-layout: auto;
+}
+
+table thead {
+  background-color: #007bff;
+  color: white;
+  font-size: 25px;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 20px;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+table th {
+  text-transform: uppercase;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Appointment status styles */
+.value-pending {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.value-accepted {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.value-rejected {
+  color: #f44336;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .appointments-section {
+    width: 100%;
+  }
+
+  table th,
+  table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  table th,
+  table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .appointments-section {
+    padding: 10px;
+  }
+
+  table thead {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table tr {
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    display: block;
+    font-size: 14px;
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 50%;
+    white-space: nowrap;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .banner h5 {
+    font-size: 18px;
+  }
+}
+
+
+/* Container styles */
+.containers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #c5bdbd;
+  color: white;
+  position: relative;
+  width: 100%;
+}
+
+/* Logo styling */
+/* PrescriptionForm.css or another relevant CSS file */
+.logo {
+  width: 100px;  /* Set the width of the logo */
+  height: auto;  /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center the logo horizontally */
+}
+/* PrescriptionForm.css or another relevant CSS file */
+.logo-img {
+  width: 67px;        /* Adjust size as needed */
+  height: auto;        /* Maintain aspect ratio */
+  display: block;
+  margin-top: -30px;           /* Remove any default margins */
+  position: absolute;  /* Position the image absolutely within its container */
+  left: 0;             /* Align to the left edge of the container */
+}
+
+
+
+/* Button styling */
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #111010;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover animation for buttons */
+.btn:hover {
+  background-color: #3b3b40;
+  transform: scale(1.05);
+}
+
+/* Login/Logout button-specific animation */
+.loginBtn, .logoutBtn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hamburger icon styling */
+.hamburger {
+  display: none;
+}
+
+/* Responsive design for mobile view */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    margin: 0.5rem 0;
+  }
+}
+
+.page {
+  margin-left: 120px;
+  background: #e5e5e5;
+  padding: 40px;
+  height: 100vh;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+@media (max-width: 1208px) {
+  .page {
+    margin-left: 0;
+    border-radius: 0;
+  }
+}
+@media (max-width: 485px) {
+  .page {
+    padding: 40px 20px;
+  }
+}
+@media (max-width: 460px) {
+  .logo {
+    width: 100%;
+  }
+}
+.form-title{
+  font-size: 1.55rem;
+  color: #111;
+  margin-bottom: 30px;
+}
+.form-component {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  min-height: 70vh;
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.form-component h2 {
+  color: gray;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+.form-component h4 {
+  color: gray;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.form-component p {
+  max-width: 750px;
+  color: gray;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.form-component form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 550px;
+}
+.add-admin-form form {
+  width: 100%;
+}
+.form-component p:first-child {
+  font-size: 25px;
+  font-weight: 700;
+  color: #370080a3;
+  margin-top: 30px;
+}
+.form-component form div {
+  display: flex;
+  gap: 30px;
+}
+.form-component form input,
+.form-component form select,
+.form-component form textarea {
+  flex: 1;
+  font-size: 20px;
+  padding: 10px 10px 10px 40px;
+  border-radius: 7px;
+  border: 1px solid gray;
+}
+.form-component button {
+  padding: 5px 35px;
+  color: #fff;
+  font-weight: 700;
+  width: fit-content;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+  margin-bottom: 10px;
+  background: linear-gradient(140deg, #9083d5, #271776ca);
+}
+.form-component .wrapper {
+  display: flex;
+  gap: 30px;
+}
+.form-component .wrapper .banner {
+  flex: 1;
+}
+.form-component .wrapper .banner:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-component .wrapper .banner:last-child img {
+  max-width: 450px;
+}
+@media (max-width: 888px) {
+  .form-component {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .form-component form div {
+    flex-direction: column;
+  }
+}
+@media (max-width: 667px) {
+  .form-component form input,
+  .form-component form select,
+  .form-component form textarea {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .form-component form {
+    width: 100%;
+  }
+}
+@media (max-width: 485px) {
+  .add-admin-form {
+    padding: 30px 0;
+  }
+}
+
+/* LinkButton.css or add to existing CSS file */
+
+.link-button {
+  display: inline-block; /* Allows padding and margin to be applied */
+  padding: 10px 20px; /* Adds space around the text */
+  font-size: 1em; /* Sets font size */
+  color: #fff; /* Text color */
+  background-color: #007bff; /* Button background color */
+  border: none; /* Removes default border */
+  border-radius: 4px; /* Rounds the corners */
+  text-decoration: none; /* Removes underline */
+  text-align: center; /* Centers text */
+  cursor: pointer; /* Changes the cursor on hover */
+  transition: background-color 0.3s; /* Adds a smooth transition for hover effect */
+}
+
+.link-button:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+}
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Primary blue color */
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+
+.button-link:hover {
+  background-color: #0056b3; /* Darker shade of blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.button-link:active {
+  background-color: #003f7f; /* Even darker shade on click */
+  transform: translateY(1px); /* Pressed-down effect */
+}
+

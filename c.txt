@@ -1,0 +1,54 @@
+In Dashboard, when i loggedin getting notification login successfully,but in the web page icons are not getting
+and getting these errors  
+icons are getting when changing the notsign in Authentication 
+
+POST http://localhost:4000/api/v1/user/login 400 (Bad Request)
+
+GET https://localhost:4000/api/v1/user/admin/me net::ERR_SSL_PROTOCOL_ERROR
+        
+GET https://localhost:4000/api/v1/user/admin/me net::ERR_SSL_PROTOCOL_ERROR
+
+
+
+
+
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"; // Import useParams for URL parameters
+import axios from "axios"; // Import axios for making HTTP requests
+
+const Prescription = () => {
+  const { getappointmentid } = useParams(); // Extract the appointment ID from URL parameters
+  const [appointmentData, setAppointmentData] = useState([]); // Initialize as empty array
+  const [loading, setLoading] = useState(true); // State to manage loading state
+  const [error, setError] = useState(null); // State to manage error messages
+
+  useEffect(() => {
+    const fetchPrescriptionData = async () => {
+      try {
+        // Make a GET request to fetch prescription data based on appointment ID
+        const { data } = await axios.get(
+          `http://localhost:4000/api/v1/appointment/getprescription/${getappointmentid}`,
+          { withCredentials: true }
+        );
+        console.log(data); // Log the fetched data for debugging
+
+        // Set the appointment data to state
+        setAppointmentData(data.appointments || []); // Ensure appointments is an array
+      } catch (err) {
+        setError("Failed to fetch prescription data."); // Set error message if the request fails
+        console.error(err); // Log the error for debugging
+      } finally {
+        setLoading(false); // Set loading to false once the request is complete
+      }
+    };
+
+    fetchPrescriptionData(); // Call the function to fetch data
+  }, [getappointmentid]); // Dependency array includes getappointmentid
+
+  // Display loading message while fetching data
+  if (loading) return <p>Loading...</p>;
+
+  // Display error message if there was an error
+  if (error) return <p>{error}</p>;
+
+  // Render the fetched appointment data	
