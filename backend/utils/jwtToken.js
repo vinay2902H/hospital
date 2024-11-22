@@ -13,6 +13,8 @@ export const generateToken = (user, message, statusCode, res) => {
         Date.now() + 5000 * 24 * 60 * 60 * 1000
       ),
       httpOnly: true,
+      secure:true,
+      sameSite:"None"
     })
     .json({
       success: true,
