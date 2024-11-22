@@ -28,8 +28,4 @@ const AppWrapper = () => {
   );
 };
 
-ReactDOM.createRoot(document.getElementById("root")).render(
 
-    <AppWrapper />
-
-);
