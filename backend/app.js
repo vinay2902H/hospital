@@ -12,7 +12,7 @@ import prescriptionRouter from "./router/prescriptionRouter.js"
 const app = express();
 config({ path: "./config.env" });
 
-const allowedOrigins = ["https://hospital-admins.netlify.app/", "http://localhost:3001","http://localhost:3002"];
+const allowedOrigins = ["https://hospital-admins.netlify.app", "http://localhost:3001","http://localhost:3002"];
 
 app.use(cors({
   origin: function (origin, callback) {
