@@ -26,10 +26,11 @@ router.get("/getall", isAdminAuthenticated, getAllAppointments);
 router.get("/getpatientbynic/:nicval", isPatientAuthenticated, getAppointmentsByNIC);
 router.get("/getdoctor/:doctornic", isDoctorAuthenticated, getDoctorAppointments);
 //router.get("/getstatus", isPatientAuthenticated, getPatientAppointments);
+router.put("/update/:id", isAdminAuthenticated, updateAppointmentStatus);
 router.get("/getprescription/:appointmentId",getprescription);
 router.put("/updateprescription/:appointmentId",updateAppointmentprescription);
 router.get("/getappointment/:getappointmentid",isDoctorAuthenticated,getdocappointments);
-router.put("/update/:id", isDoctorAuthenticated, updateAppointmentStatus);
+
 router.delete("/delete/:id", isAdminAuthenticated, deleteAppointment);
 
 export default router;
